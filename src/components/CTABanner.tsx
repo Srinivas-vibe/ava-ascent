@@ -1,5 +1,6 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const CTABanner = () => {
   const ref = useRef<HTMLDivElement>(null);
