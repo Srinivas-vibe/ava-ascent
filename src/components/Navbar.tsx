@@ -1,18 +1,19 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { label: "Home", href: "#hero" },
-  { label: "About", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Contact Us", href: "/contact" },
+  { label: "Legal", href: "/legal" },
 ];
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -30,27 +31,29 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto flex items-center justify-between h-16 md:h-20 px-6">
-        <a href="#hero" className="font-display font-bold text-xl md:text-2xl tracking-tight">
+        <Link to="/" className="font-display font-bold text-xl md:text-2xl tracking-tight">
           <span className="gradient-text">AVA</span>
           <span className="text-foreground/80 text-sm md:text-base ml-1">Computing</span>
-        </a>
+        </Link>
 
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <a
+            <Link
               key={link.href}
-              href={link.href}
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300"
+              to={link.href}
+              className={`text-sm transition-colors duration-300 ${
+                location.pathname === link.href ? "text-foreground font-medium" : "text-muted-foreground hover:text-foreground"
+              }`}
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="gradient-btn px-5 py-2 rounded-lg text-sm font-semibold transition-all duration-300 hover:opacity-90 glow-primary"
           >
             Get in Touch
-          </a>
+          </Link>
         </div>
 
         <button className="md:hidden text-foreground" onClick={() => setMobileOpen(!mobileOpen)}>
@@ -68,22 +71,22 @@ const Navbar = () => {
           >
             <div className="flex flex-col px-6 py-4 gap-4">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
+                  to={link.href}
                   onClick={() => setMobileOpen(false)}
                   className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
-              <a
-                href="#contact"
+              <Link
+                to="/contact"
                 onClick={() => setMobileOpen(false)}
                 className="gradient-btn px-5 py-2 rounded-lg text-sm font-semibold text-center"
               >
                 Get in Touch
-              </a>
+              </Link>
             </div>
           </motion.div>
         )}
