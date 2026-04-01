@@ -67,18 +67,18 @@ const HeroSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="gradient-btn px-8 py-3.5 rounded-xl text-base font-semibold glow-primary transition-all duration-300 hover:scale-105"
           >
             Get Consultation
-          </a>
-          <a
-            href="#services"
+          </Link>
+          <Link
+            to="/services"
             className="glass px-8 py-3.5 rounded-xl text-base font-semibold text-foreground hover:bg-card/80 transition-all duration-300 hover:scale-105"
           >
             View Services
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
 
