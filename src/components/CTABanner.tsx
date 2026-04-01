@@ -24,12 +24,12 @@ const CTABanner = () => {
             <p className="text-lg opacity-90 max-w-xl mx-auto mb-8">
               Let's discuss how AVA Computing Services can help your business thrive with modern IT solutions.
             </p>
-            <a
-              href="#contact"
+            <Link
+              to="/contact"
               className="inline-block bg-background text-foreground px-8 py-3.5 rounded-xl font-semibold text-sm hover:bg-background/90 transition-all duration-300 hover:scale-105"
             >
               Get Started Today
-            </a>
+            </Link>
           </div>
         </motion.div>
       </div>
