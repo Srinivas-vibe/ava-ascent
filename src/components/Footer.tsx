@@ -67,7 +67,7 @@ const Footer = () => (
         <span className="text-red-500">❤️</span>
         <div className="flex items-center">
           <span>by Powerdy by CodeNest</span>
-          <img src="/src/assets/codenest.png" alt="CodeNest" className="w-32 h-32 ml-1" />
+          <img src="/codenest.png" alt="CodeNest" className="w-40 h-40 ml-2" />
         </div>
       </div>
     </div>
