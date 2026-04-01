@@ -61,6 +61,15 @@ const Footer = () => (
         <p>© AVA Computing Services Ltd. 2004 – {new Date().getFullYear()} All rights reserved | Company Reg No. 4808326</p>
         <p>27 Bulls Copse Lane, Horndean, Hants, PO8 9QX</p>
       </div>
+      
+      <div className="flex flex-col md:flex-row justify-center items-center gap-2 mt-6 text-xs text-muted-foreground">
+        <span>Made with</span>
+        <span className="text-red-500">❤️</span>
+        <div className="flex items-center">
+          <span>by Powerdy by CodeNest</span>
+          <img src="/src/assets/codenest.png" alt="CodeNest" className="w-32 h-32 ml-1" />
+        </div>
+      </div>
     </div>
   </footer>
 );
