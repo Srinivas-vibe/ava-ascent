@@ -18,7 +18,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/ava-ascent">
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
